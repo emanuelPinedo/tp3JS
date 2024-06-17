@@ -1,18 +1,19 @@
-function updateDateTime() {
-    const now = new Date();
-    const dateTimeString = now.toLocaleString();
-    document.getElementById('currentDateTime').textContent = `Fecha y Hora Actual: ${dateTimeString}`;
+function actualizarTiempo() {
+    var fechaAhora = new Date();
+    var dateTimeString = fechaAhora.toLocaleString();
+    document.getElementById('actualizarTiempo').textContent = `Fecha y Hora Actual: ${dateTimeString}`;
 
-    // Fecha del parcial de JavaScript (aquí se debe poner la fecha correcta del parcial)
-    const examDate = new Date('2024-07-01T00:00:00');
-    const timeDifference = examDate - now;
+    // Fecha del parcial de JavaScript
+    var examenDate = new Date('2024-06-18T17:00:00');
+    var tiempoDiferencia = examenDate - fechaAhora;
 
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    var dias = Math.floor(tiempoDiferencia / (1000 * 60 * 60 * 24));
+    var horas = Math.floor((tiempoDiferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutos = Math.floor((tiempoDiferencia % (1000 * 60 * 60)) / (1000 * 60));
+    var segundos = Math.floor((tiempoDiferencia % (1000 * 60)) / 1000);
 
-    document.getElementById('countdown').textContent = `Faltan ${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos para el parcial de JavaScript.`;
+    document.getElementById('countdown').textContent = `Faltan ${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos para el parcial de JavaScript.`;
 }
 
-setInterval(updateDateTime, 1000);
+//llama a la funcion actualizarTiempo cada 1 segundo (1000 milisegundos).
+setInterval(actualizarTiempo, 1000);

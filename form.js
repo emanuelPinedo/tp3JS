@@ -1,23 +1,33 @@
 document.getElementById('chatForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+    event.preventDefault();//linea 1 y 2 fundamentales en js para manejar formularios
 
-    const username = document.getElementById('username').value;
-    const message = document.getElementById('message').value;
+    var username = document.getElementById('username').value;
+    var message = document.getElementById('message').value;
 
     if (username && message) {
-        const messageList = document.getElementById('messages');
-        const newMessage = document.createElement('li');
+        var messageList = document.getElementById('messages');
+        var newMessage = document.createElement('li');
         newMessage.classList.add('message');
 
-        const usernameSpan = document.createElement('span');
+        // Obtener fecha y hora actuales
+        var now = new Date();
+        var dateString = now.toLocaleString();
+
+        var timestampSpan = document.createElement('span');
+        timestampSpan.classList.add('timestamp');
+        timestampSpan.textContent = `${dateString} por `;
+
+        var usernameSpan = document.createElement('span');
         usernameSpan.classList.add('username');
         usernameSpan.textContent = `${username}: `;
 
-        const messageSpan = document.createElement('span');
+        var messageSpan = document.createElement('span');
         messageSpan.classList.add('text');
         messageSpan.textContent = message;
 
+        newMessage.appendChild(timestampSpan);
         newMessage.appendChild(usernameSpan);
+        newMessage.appendChild(document.createElement('br'));
         newMessage.appendChild(messageSpan);
         messageList.appendChild(newMessage);
 

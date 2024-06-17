@@ -1,8 +1,8 @@
 function calcularEdad() {
-    const yearOfBirth = prompt('Ingrese su año de nacimiento:');
-    if (yearOfBirth) {
-        const currentYear = new Date().getFullYear();
-        const age = currentYear - yearOfBirth;
-        document.getElementById('ageResult').textContent = `Su edad es ${age}.`;
+    var anioNac = prompt('Ingrese su año de nacimiento:');
+    if (anioNac) {
+        var anioAct = new Date().getFullYear();
+        var edad = anioAct - anioNac;
+        document.getElementById('edadRes').textContent = `Su edad es ${edad}.`;
     }
 }
