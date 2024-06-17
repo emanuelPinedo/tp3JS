@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAT</title>
+</head>
+<body>
+    <h1>CHAT</h1>
+    <form id="chatForm">
+        <label for="username">Nombre de Usuario:</label>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+        <label for="message">Mensaje:</label>
+        <br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+        <br><br>
+        <button type="submit">Enviar Mensaje</button>
+    </form>
+    <div id="chatContainer">
+        <ul id="messages"></ul>
+    </div>
+    <script type="text/javascript" src="form.js"></script>
+</body>
+</html>
